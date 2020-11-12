@@ -7,4 +7,28 @@
 body {
   height: 100vh;
   background: linear-gradient(0deg, rgba(210,212,201,1) 80%, rgba(53,134,117,1) 80%);
+
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow:hidden;
+}
+
+main {
+  width: 1500px;
+  height: 900px;
+  background-color: #fff;
+  display: flex;
+}
+
+aside {
+  width: 35%;
+  height: 100%;
+}
+
+.conversation {
+  width: 65%;
+  height: 100%;
+  background-color: #E5DCD5;
 }
