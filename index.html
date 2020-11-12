@@ -2,41 +2,60 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <title>Boolzap</title>
   </head>
   <body>
-    <main>
-      <aside>
-        <div class="profile">
-          <img src="img/girl.png" alt="profile-img" class="profile-img">
-          <div class="disabled-icons">
-            <i class="fas fa-circle-notch"></i>
-            <i class="fas fa-comment-alt"></i>
-            <i class="fas fa-ellipsis-v"></i>
+    <div id="root">
+      <main>
+        <aside>
+          <div class="profile">
+            <img src="img/girl.png" alt="profile-img" class="profile-img">
+            <div class="disabled-icons">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
           </div>
-        </div>
-        <div class="notifications">
-          <div class="bell-icon">
-            <i class="fas fa-bell-slash"></i>
-          </div>
-          <div class="notif-settings">
-            <p>Ricevi notifiche di nuovi messaggi</p>
-            <p>Attiva le notifiche desktop</p>
-          </div>
-        </div>
-        <div class="search">
-          <a href="#" class="search-icon">
-            <i class="fas fa-search"></i>
-          </a>
-          <input type="text" name="search" placeholder="Cerca o inizia nuova chat">
-        </div>
-        <div class="contacts-list"></div>
-      </aside>
-      <div class="conversation">
 
-      </div>
-    </main>
+          <div class="notifications">
+            <div class="bell-icon">
+              <i class="fas fa-bell-slash"></i>
+            </div>
+
+            <div class="notif-settings">
+              <p>Ricevi notifiche di nuovi messaggi</p>
+              <p>Attiva le notifiche desktop</p>
+            </div>
+          </div>
+
+          <div class="search">
+            <a href="#" class="search-icon">
+              <i class="fas fa-search"></i>
+            </a>
+            <input type="text" name="search" placeholder="Cerca o inizia nuova chat">
+          </div>
+
+          <div class="contacts-list">
+            <div class="contact" v-for="(item, index) in contacts">
+              <img :src="contacts[index].avatar" alt="" class="contact-img">
+              <span class="preview">
+                <p class="contact-name">{{contacts[index].name}} </h3>
+                <p class="preview-msg">Non poteva essere altrimenti</p>
+              </span>
+              <span class="time">
+                16.48
+              </span>
+            </div>
+          </div>
+        </aside>
+        <div class="conversation">
+
+        </div>
+      </main>
+    </div>
+    <script src="assets/main.js" charset="utf-8"></script>
   </body>
 </html>
