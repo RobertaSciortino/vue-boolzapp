@@ -1,7 +1,6 @@
 var app = new Vue (
   {
     el: '#root',
-
     data: {
       contacts: [
         {
@@ -25,6 +24,9 @@ var app = new Vue (
               status: 'received'
             }
           ],
+          contactClasses: [
+            'contact'
+          ],
         },
         {
           name: 'Fabio',
@@ -46,6 +48,9 @@ var app = new Vue (
               message: 'Mi piacerebbe ma devo andare a fare la spesa',
               status: 'received'
             }
+          ],
+          contactClasses: [
+            'contact'
           ],
         },
         {
@@ -69,6 +74,9 @@ var app = new Vue (
               status: 'received'
             }
           ],
+          contactClasses: [
+            'contact'
+          ],
         },
         {
           name: 'Luisa',
@@ -86,12 +94,26 @@ var app = new Vue (
               status: 'received'
             }
           ],
+          contactClasses: [
+            'contact'
+          ],
         },
       ]
 
     },
     methods: {
+      addSelectedClass(index) {
+
+        for (var i = 0; i < this.contacts.length; i++) {
+          this.contacts[index].contactClasses = ['contact', 'selected'];
+          if(i != index){
+            this.contacts[i].contactClasses = ['contact'];
+          }
+        }
+
+
+      }
+    }
 
   }
-
-})
+)

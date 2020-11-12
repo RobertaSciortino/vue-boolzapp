@@ -39,7 +39,7 @@
           </div>
 
           <div class="contacts-list">
-            <div class="contact" v-for="(item, index) in contacts">
+            <div @click="addSelectedClass(index)" :class="contacts[index].contactClasses" v-for="(item, index) in contacts">
               <img :src="contacts[index].avatar" alt="" class="contact-img">
               <span class="preview">
                 <p class="contact-name">{{contacts[index].name}} </h3>

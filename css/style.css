@@ -124,14 +124,18 @@ aside {
   overflow-y: scroll;
   height: calc(100% - 190px);
 }
+
 .contact {
   height: 80px;
-  background-color: #fff;
   border-top: 1px solid #EAEAEA;
   border-bottom: 1px solid #EAEAEA;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.selected {
+  background-color: #E9EBEA;
 }
 
 .contact-img {
