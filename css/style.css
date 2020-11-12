@@ -170,9 +170,72 @@ aside {
   padding-top: 5px;
 }
 
-/*conversation section */
-.conversation {
+/*chat section */
+.main-chat {
   width: 65%;
   height: 100%;
   background-color: #E5DCD5;
+  border-left: 1px solid #B1B1B1;
+}
+
+.header {
+  height: 70px;
+  background-color: #EAEAEA;
+}
+
+.chat {
+  height: calc(100% - 150px);
+  background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+  display: flex;
+  flex-direction: column;
+}
+
+.write-message {
+  height: 80px;
+  background-color: #F3EEEA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.write-message i {
+  color: #B1B1B1;
+  font-size: 22px;
+  margin: 20px;
+}
+
+.write-message input {
+  width: 80%;
+  padding: 20px 15px;
+  border: none;
+}
+
+.sent,.received {
+  max-width: 200px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sent p:first-child,
+.received p:first-child {
+  padding-bottom: 10px;
+}
+
+.sent p:last-child,
+.received p:last-child {
+  font-size: 10px;
+  align-self: flex-end;
+  color: #B1B1B1;
+}
+
+.sent {
+  background-color: #D8F8BE;
+  align-self: flex-end;
+}
+
+.received {
+  background-color: #fff;
 }

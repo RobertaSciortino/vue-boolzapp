@@ -51,8 +51,30 @@
             </div>
           </div>
         </aside>
-        <div class="conversation">
+        <div class="main-chat">
+          <div class="header">
 
+          </div>
+          <div class="chat">
+            <div :class="contacts[0].messages[0].status">
+              <p>{{contacts[0].messages[0].message}}</p>
+              <p>17.35</p>
+            </div>
+            <div :class="contacts[0].messages[1].status">
+              <p>{{contacts[0].messages[1].message}}</p>
+              <p>17.35</p>
+            </div>
+            <div :class="contacts[0].messages[2].status">
+              <p>{{contacts[0].messages[2].message}}</p>
+              <p>17.35</p>
+            </div>
+
+          </div>
+          <div class="write-message">
+            <i class="far fa-smile"></i>
+            <input type="text" name="" value="">
+            <i class="fas fa-microphone"></i>
+          </div>
         </div>
       </main>
     </div>
