@@ -2,6 +2,7 @@ var app = new Vue (
   {
     el: '#root',
     data: {
+      selectedContactIndex: 0,
       contacts: [
         {
           name: 'Michele',
@@ -25,8 +26,8 @@ var app = new Vue (
             }
           ],
           contactClasses: [
-            'contact'
-          ],
+            'contact', 'selected'
+          ]
         },
         {
           name: 'Fabio',
@@ -96,22 +97,20 @@ var app = new Vue (
           ],
           contactClasses: [
             'contact'
-          ],
+          ]
         },
       ]
 
     },
     methods: {
-      addSelectedClass(index) {
-
+      onSelectedContact(index) {
+        this.contacts[index].contactClasses = ['contact', 'selected'];
         for (var i = 0; i < this.contacts.length; i++) {
-          this.contacts[index].contactClasses = ['contact', 'selected'];
           if(i != index){
             this.contacts[i].contactClasses = ['contact'];
           }
         }
-
-
+      this.selectedContactIndex = index;
       }
     }
 

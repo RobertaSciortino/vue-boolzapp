@@ -39,7 +39,7 @@
           </div>
 
           <div class="contacts-list">
-            <div @click="addSelectedClass(index)" :class="contacts[index].contactClasses" v-for="(item, index) in contacts">
+            <div @click="onSelectedContact(index)" :class="contacts[index].contactClasses" v-for="(item, index) in contacts">
               <img :src="contacts[index].avatar" alt="" class="contact-img">
               <span class="preview">
                 <p class="contact-name">{{contacts[index].name}} </h3>
@@ -56,20 +56,12 @@
 
           </div>
           <div class="chat">
-            <div :class="contacts[0].messages[0].status">
-              <p>{{contacts[0].messages[0].message}}</p>
+            <div v-for="messageItem in contacts[selectedContactIndex].messages" :class="messageItem.status">
+              <p>{{messageItem.message}}</p>
               <p>17.35</p>
             </div>
-            <div :class="contacts[0].messages[1].status">
-              <p>{{contacts[0].messages[1].message}}</p>
-              <p>17.35</p>
-            </div>
-            <div :class="contacts[0].messages[2].status">
-              <p>{{contacts[0].messages[2].message}}</p>
-              <p>17.35</p>
-            </div>
-
           </div>
+
           <div class="write-message">
             <i class="far fa-smile"></i>
             <input type="text" name="" value="">
