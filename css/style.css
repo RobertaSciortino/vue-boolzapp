@@ -27,6 +27,73 @@ aside {
   height: 100%;
 }
 
+/*profile section */
+
+.profile {
+  height: 70px;
+  background-color: #EAEAEA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-img {
+  width: 60px;
+  border-radius: 50%;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.disabled-icons {
+  margin-right: 20px;
+}
+
+.disabled-icons i {
+  color: #B1B1B1;
+  font-size: 22px;
+  margin: 5px;
+}
+
+
+/*notifications section */
+
+.notifications {
+  height: 70px;
+  background-color: #8EDAFC;
+  display: flex;
+  align-items: center;
+}
+
+.bell-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  margin-left: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bell-icon i {
+  font-size: 22px;
+  color: #8EDAFC;
+}
+
+.notif-settings {
+  margin-left: 20px;
+}
+
+.notif-settings p {
+  text-decoration: underline;
+}
+/*search section */
+
+.search {
+  height: 50px;
+  background-color: #FAFAFA;
+}
+
 .conversation {
   width: 65%;
   height: 100%;
