@@ -7,12 +7,12 @@
 body {
   height: 100vh;
   background: linear-gradient(0deg, rgba(210,212,201,1) 80%, rgba(53,134,117,1) 80%);
-
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow:hidden;
+  font-family: Arial;
 }
 
 main {
@@ -84,16 +84,44 @@ aside {
   margin-left: 20px;
 }
 
-.notif-settings p {
-  text-decoration: underline;
+.notif-settings p:first-child {
+  font-size: 16px;
+  font-weight: bold;
 }
+
+.notif-settings p:last-child {
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+
 /*search section */
 
 .search {
   height: 50px;
   background-color: #FAFAFA;
+  display: flex;
+  align-items: center;
 }
 
+.search input {
+  width: 90%;
+  padding: 5px;
+  margin: 0 10px;
+  border: none;
+}
+
+.search-icon {
+  color: #B1B1B1;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+
+/*list section */
+
+
+/*conversation section */
 .conversation {
   width: 65%;
   height: 100%;
