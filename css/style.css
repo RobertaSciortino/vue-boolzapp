@@ -187,6 +187,23 @@ aside {
   background-color: #EAEAEA;
 }
 
+.selected-chat {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.disabled {
+  display: none;
+}
+
+.preview-chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 50px;
+}
+
 .chat {
   height: calc(100% - 150px);
   background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');

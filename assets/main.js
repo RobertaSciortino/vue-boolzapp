@@ -27,6 +27,9 @@ var app = new Vue (
           ],
           contactClasses: [
             'contact', 'selected'
+          ],
+          selectedChat: [
+            'selected-chat',
           ]
         },
         {
@@ -47,12 +50,15 @@ var app = new Vue (
             {
               date: '20/03/2020 16:35:00',
               message: 'Mi piacerebbe ma devo andare a fare la spesa',
-              status: 'received'
+              status: 'sent'
             }
           ],
           contactClasses: [
             'contact'
           ],
+          selectedChat: [
+            'selected-chat', 'disabled'
+          ]
         },
         {
           name: 'Samuele',
@@ -78,6 +84,9 @@ var app = new Vue (
           contactClasses: [
             'contact'
           ],
+          selectedChat: [
+            'selected-chat', 'disabled'
+          ]
         },
         {
           name: 'Luisa',
@@ -97,6 +106,9 @@ var app = new Vue (
           ],
           contactClasses: [
             'contact'
+          ],
+          selectedChat: [
+            'selected-chat', 'disabled'
           ]
         },
       ]
@@ -105,12 +117,14 @@ var app = new Vue (
     methods: {
       onSelectedContact(index) {
         this.contacts[index].contactClasses = ['contact', 'selected'];
+        this.contacts[index].selectedChat = ['selected-chat'];
         for (var i = 0; i < this.contacts.length; i++) {
           if(i != index){
             this.contacts[i].contactClasses = ['contact'];
+            this.contacts[i].selectedChat = ['selected-chat', 'disabled'];
           }
         }
-      this.selectedContactIndex = index;
+        this.selectedContactIndex = index;
       }
     }
 

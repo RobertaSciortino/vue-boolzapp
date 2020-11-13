@@ -51,10 +51,19 @@
             </div>
           </div>
         </aside>
-        <div class="main-chat">
-          <div class="header">
 
+        <div class="main-chat">
+
+          <div class="header">
+            <div v-for="(contact, index) in contacts" :class="contacts[index].selectedChat">
+              <img :src="contacts[index].avatar" alt="" class="contact-img">
+              <div class="preview-chat">
+                <p class="contact-name">{{contacts[index].name}}</p>
+                <p class="preview-msg">Ultimo accesso alle 9.00</p>
+              </div>
+            </div>
           </div>
+
           <div class="chat">
             <div v-for="messageItem in contacts[selectedContactIndex].messages" :class="messageItem.status">
               <p>{{messageItem.message}}</p>
