@@ -111,7 +111,11 @@ var app = new Vue (
             'selected-chat', 'disabled'
           ]
         },
-      ]
+      ],
+      user: {
+        message:'',
+        status: 'sent'
+      }
 
     },
     methods: {
@@ -125,7 +129,13 @@ var app = new Vue (
           }
         }
         this.selectedContactIndex = index;
-      }
+
+      },
+      sendMessage() {
+        this.contacts[this.selectedContactIndex].messages.push(this.user);
+        this.user = {message: '', status: 'sent'};
+      },
+
     }
 
   }
