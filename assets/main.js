@@ -115,6 +115,10 @@ var app = new Vue (
       user: {
         message:'',
         status: 'sent'
+      },
+      contactMessage: {
+        message: 'Ciao!!',
+        status: 'received'
       }
 
     },
@@ -134,6 +138,9 @@ var app = new Vue (
       sendMessage() {
         this.contacts[this.selectedContactIndex].messages.push(this.user);
         this.user = {message: '', status: 'sent'};
+        setTimeout(() => {
+          this.contacts[this.selectedContactIndex].messages.push(this.contactMessage);
+        }, 1000);
       },
 
     }
