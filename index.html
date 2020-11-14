@@ -35,11 +35,11 @@
             <a href="#" class="search-icon">
               <i class="fas fa-search"></i>
             </a>
-            <input type="text" name="search" placeholder="Cerca o inizia nuova chat">
+            <input type="text" name="search" placeholder="Cerca o inizia nuova chat" v-model='userSearch' @keyup="searchContact">
           </div>
 
           <div class="contacts-list">
-            <div @click="onSelectedContact(index)" :class="contacts[index].contactClasses" v-for="(item, index) in contacts">
+            <div @click="onSelectedContact(index)" :class="contacts[index].contactClasses" v-for="(contact, index) in contacts" v-if="contacts[index].visible">
               <img :src="contacts[index].avatar" alt="" class="contact-img">
               <span class="preview">
                 <p class="contact-name">{{contacts[index].name}} </h3>

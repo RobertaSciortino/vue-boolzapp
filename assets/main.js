@@ -111,6 +111,29 @@ var app = new Vue (
             'selected-chat', 'disabled'
           ]
         },
+        {
+          name: 'Sabrina',
+          avatar: 'img/girl.png',
+          visible: true,
+          messages: [
+            {
+              date: '10/01/2020 15:30:55',
+              message: 'Andiamo al cinema stasera?',
+              status: 'sent'
+            },
+            {
+              date: '10/01/2020 15:50:00',
+              message: 'Si, ci vediamo alle 20.00 :)',
+              status: 'received'
+            }
+          ],
+          contactClasses: [
+            'contact'
+          ],
+          selectedChat: [
+            'selected-chat', 'disabled'
+          ]
+        },
       ],
       user: {
         message:'',
@@ -119,7 +142,8 @@ var app = new Vue (
       contactMessage: {
         message: 'Ciao!!',
         status: 'received'
-      }
+      },
+      userSearch:''
 
     },
     methods: {
@@ -142,6 +166,13 @@ var app = new Vue (
           this.contacts[this.selectedContactIndex].messages.push(this.contactMessage);
         }, 1000);
       },
+      searchContact() {
+        this.contacts.forEach((contact, i) => {
+          contact.visible = contact.name.toLowerCase().startsWith(this.userSearch.toLowerCase());
+          console.log(contact.visible);
+        });
+
+      }
 
     }
 
