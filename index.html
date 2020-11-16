@@ -32,10 +32,10 @@
           </div>
 
           <div class="search">
-            <a href="#" class="search-icon">
+            <button @click="searchContact()" type="button" name="button" class="search-icon">
               <i class="fas fa-search"></i>
-            </a>
-            <input type="text" name="search" placeholder="Cerca o inizia nuova chat" v-model='userSearch' @keyup="searchContact">
+            </button>
+            <input type="text" name="search" placeholder="Cerca o inizia nuova chat" v-model='userSearch' @keyup="searchContact()">
           </div>
 
           <div class="contacts-list">
@@ -70,9 +70,12 @@
           </div>
 
           <div class="chat">
-            <div v-for="messageItem in contacts[selectedContactIndex].messages" :class="messageItem.status">
+            <div v-for="messageItem in contacts[selectedContactIndex].messages" :class="messageItem.status" @mouseenter="showIconDropdownMenu(messageItem)" @mouseleave="hideIconDropdownMenu(messageItem)">
               <p>{{messageItem.message}}</p>
               <p>17.35</p>
+              <a href="#" v-show="messageItem.activeMenu">
+                <i class="fas fa-angle-down"></i>
+              </a>
             </div>
           </div>
 
