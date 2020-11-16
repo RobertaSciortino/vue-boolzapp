@@ -197,24 +197,50 @@ aside {
   display: flex;
 }
 
-.chat div {
-  position: relative;
+.msg-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-.chat a {
-  position: absolute;
-  right: 5px;
-  top: 5px;
+.msg-contaniner a {
   padding: 5px;
   cursor: pointer;
 }
 
-.chat p:last-of-type {
-  font-size: 12px;
+.chat p.time-msg {
   color: #B1B1B1;
+  font-size: 12px;
   align-self: flex-end;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #EAEAEA;
+  z-index: 1;
+  -webkit-box-shadow: -2px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    -2px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         -2px 0px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.dropdown-menu ul {
+  list-style-type: none;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.chat > div {
+  position: relative;
 }
 
 .disabled {
@@ -235,6 +261,8 @@ aside {
   flex-direction: column;
   overflow-y: scroll;
 }
+
+
 
 .write-message {
   height: 80px;
