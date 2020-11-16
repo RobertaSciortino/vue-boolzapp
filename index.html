@@ -69,11 +69,11 @@
             </div>
           </div>
 
-          <div class="chat"  @click="closeDropdownMenu()">
+          <div class="chat" @click="closeDropdownMenu()">
             <div v-for="(messageItem, index) in contacts[selectedContactIndex].messages" :class="messageItem.status" @mouseenter="showIconDropdownMenu(messageItem)" @mouseleave="hideIconDropdownMenu(messageItem)">
               <div class="msg-container">
                 <p>{{messageItem.message}}</p>
-                <a href="#"  @click="openDropdownMenu(messageItem)" v-show="messageItem.activeMenu">
+                <a href="#"  @click="openOrCloseDropdownMenu(messageItem)" v-show="messageItem.activeMenu">
                   <i class="fas fa-angle-down"></i>
                 </a>
               </div>
@@ -84,10 +84,10 @@
                   <a href="#"> Info </a>
                 </li>
                 <li>
-                  <a href="#" @click="deleteMessage(index)"> Copia </a>
+                  <a href="#"> Copia </a>
                 </li>
                 <li>
-                  <a href="#" @click="deleteMessage(index)"> Inoltra messaggio </a>
+                  <a href="#"> Inoltra messaggio </a>
                 </li>
                 <li>
                   <a href="#" @click="deleteMessage(index)"> Elimina messaggio </a>

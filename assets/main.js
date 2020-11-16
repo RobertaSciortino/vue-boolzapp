@@ -204,8 +204,12 @@ var app = new Vue (
       hideIconDropdownMenu(item) {
         item.activeMenu = false;
       },
-      openDropdownMenu(item) {
-        item.showDropdownMenu = true;
+      openOrCloseDropdownMenu(item) {
+        if (item.showDropdownMenu == false) {
+          item.showDropdownMenu = true;
+        } else {
+          item.showDropdownMenu = false;
+        }
         console.log('click');
       },
       deleteMessage(index) {
@@ -215,7 +219,6 @@ var app = new Vue (
       },
       closeDropdownMenu() {
         console.log('click');
-      
       }
 
     }
