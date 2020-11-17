@@ -69,7 +69,7 @@
             </div>
           </div>
 
-          <div class="chat" @click="closeDropdownMenu()">
+          <div class="chat">
             <div v-for="(messageItem, index) in contacts[selectedContactIndex].messages" :class="messageItem.status" @mouseenter="showIconDropdownMenu(messageItem)" @mouseleave="hideIconDropdownMenu(messageItem)">
               <div class="msg-container">
                 <p>{{messageItem.message}}</p>

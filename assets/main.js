@@ -162,10 +162,12 @@ var app = new Vue (
         },
       ],
       user: {
+        date: '17/11/2020 9.00',
         message:'',
         status: 'sent'
       },
       contactMessage: {
+        date: '17/11/2020 9.00',
         message: 'Ciao!!',
         status: 'received'
       },
@@ -187,10 +189,19 @@ var app = new Vue (
       },
       sendMessage() {
         this.contacts[this.selectedContactIndex].messages.push(this.user);
-        this.user = {message: '', status: 'sent'};
+        this.user = {
+          date: '17/11/2020 9.00',
+          message: '',
+          status: 'sent'
+        };
+
+        this.autoScroll();
+
         setTimeout(() => {
           this.contacts[this.selectedContactIndex].messages.push(this.contactMessage);
+          this.autoScroll();
         }, 1000);
+
       },
       searchContact() {
         this.contacts.forEach((contact, i) => {
@@ -219,8 +230,16 @@ var app = new Vue (
       },
       closeDropdownMenu() {
         console.log('click');
+      },
+      autoScroll() {
+        Vue.nextTick(function(){
+          let chat = document.getElementsByClassName('chat')[0];
+          chat.scrollTop = chat.scrollHeight;
+        });
       }
-
+    },
+    mounted: function() {
+      this.autoScroll();
     }
 
   }

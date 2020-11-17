@@ -136,6 +136,7 @@ aside {
   align-items: center;
 }
 
+.contact:hover,
 .selected {
   background-color: #E9EBEA;
 }
