@@ -5,6 +5,7 @@
 }
 
 body {
+  width: 100vw;
   height: 100vh;
   background: linear-gradient(0deg, rgba(210,212,201,1) 80%, rgba(53,134,117,1) 80%);
   background-repeat: no-repeat;
@@ -16,8 +17,8 @@ body {
 }
 
 main {
-  width: 1500px;
-  height: 900px;
+  width: 80vw;
+  height: 90vh;
   background-color: #fff;
   display: flex;
 }

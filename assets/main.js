@@ -205,7 +205,7 @@ var app = new Vue (
       },
       searchContact() {
         this.contacts.forEach((contact, i) => {
-          contact.visible = contact.name.toLowerCase().startsWith(this.userSearch.toLowerCase());
+          contact.visible = contact.name.toLowerCase().includes(this.userSearch.toLowerCase());
           console.log(contact.visible);
         });
       },

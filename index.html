@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/dayjs.min.js" integrity="sha512-C2m821NxMpJ4Df47O4P/17VPqt0yiK10UmGl59/e5ynRRYiCSBvy0KHJjhp2XIjUJreuR+y3SIhVyiVilhCmcQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <title>Boolzap</title>
@@ -42,11 +43,11 @@
             <div @click="onSelectedContact(index)" :class="contacts[index].contactClasses" v-for="(contact, index) in contacts" v-if="contacts[index].visible">
               <img :src="contacts[index].avatar" alt="" class="contact-img">
               <span class="preview">
-                <p class="contact-name">{{contacts[index].name}} </h3>
+                <p class="contact-name">{{contact.name}} </p>
                 <p class="preview-msg">Non poteva essere altrimenti</p>
               </span>
               <span class="time">
-                16.48
+                15.00
               </span>
             </div>
           </div>
@@ -58,8 +59,8 @@
             <div v-for="(contact, index) in contacts" :class="contacts[index].selectedChat">
               <img :src="contacts[index].avatar" alt="" class="contact-img">
               <div class="preview-chat">
-                <p class="contact-name">{{contacts[index].name}}</p>
-                <p class="preview-msg">Ultimo accesso alle 9.00</p>
+                <p class="contact-name">{{contact.name}}</p>
+                <p class="preview-msg">Ultimo accesso {{contact.messages[contact.messages.length - 1].date}}</p>
               </div>
             </div>
             <div class="disabled-icons">
@@ -108,5 +109,6 @@
       </main>
     </div>
     <script src="assets/main.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/plugin/customParseFormat.min.js" integrity="sha512-vAkK3r73UUkIPKpHGCp7Rhpt/xptuKZpavqwaCrDwjmbgPdqBlWZuFnLvAoN7jigf6Hg5NjZmZZM1xqJaiZfsQ==" crossorigin="anonymous"></script>
   </body>
 </html>
