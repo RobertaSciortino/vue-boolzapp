@@ -162,12 +162,12 @@ var app = new Vue (
         },
       ],
       user: {
-        date: '17/11/2020 9.00',
+        date: '17/11/2020 09.00',
         message:'',
         status: 'sent'
       },
       contactMessage: {
-        date: '17/11/2020 9.00',
+        date: '17/11/2020 09.00',
         message: 'Ciao!!',
         status: 'received'
       },
@@ -240,7 +240,10 @@ var app = new Vue (
     },
     mounted: function() {
       this.autoScroll();
-    }
+
+      
+    },
+
 
   }
 )

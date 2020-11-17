@@ -44,7 +44,7 @@
               <img :src="contacts[index].avatar" alt="" class="contact-img">
               <span class="preview">
                 <p class="contact-name">{{contact.name}} </p>
-                <p class="preview-msg">Non poteva essere altrimenti</p>
+                <p class="preview-msg">{{contact.messages[contact.messages.length - 1].message}}</p>
               </span>
               <span class="time">
                 15.00
@@ -108,7 +108,8 @@
         </div>
       </main>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/plugin/customParseFormat.min.js" integrity="sha512-vAkK3r73UUkIPKpHGCp7Rhpt/xptuKZpavqwaCrDwjmbgPdqBlWZuFnLvAoN7jigf6Hg5NjZmZZM1xqJaiZfsQ==" crossorigin="anonymous">
+    </script>
     <script src="assets/main.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/plugin/customParseFormat.min.js" integrity="sha512-vAkK3r73UUkIPKpHGCp7Rhpt/xptuKZpavqwaCrDwjmbgPdqBlWZuFnLvAoN7jigf6Hg5NjZmZZM1xqJaiZfsQ==" crossorigin="anonymous"></script>
   </body>
 </html>
