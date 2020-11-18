@@ -2,7 +2,6 @@ var app = new Vue (
   {
     el: '#root',
     data: {
-      selectedContactIndex: 0,
       contacts: [
         {
           name: 'Michele',
@@ -161,18 +160,19 @@ var app = new Vue (
           ]
         },
       ],
+      selectedContactIndex: 0,
       user: {
-        date: '17/11/2020 09.00',
+        date: '',
         message:'',
         status: 'sent'
       },
       contactMessage: {
-        date: '17/11/2020 09.00',
+        date: '',
         message: 'Ciao!!',
         status: 'received'
       },
       userSearch:'',
-
+      time: []
     },
     methods: {
       onSelectedContact(index) {
@@ -188,9 +188,10 @@ var app = new Vue (
 
       },
       sendMessage() {
+        dayjs.extend(window.dayjs_plugin_customParseFormat);
         this.contacts[this.selectedContactIndex].messages.push(this.user);
         this.user = {
-          date: '17/11/2020 9.00',
+          date: dayjs(new Date()).format('HH:mm'),
           message: '',
           status: 'sent'
         };
@@ -238,11 +239,25 @@ var app = new Vue (
         });
       }
     },
-    mounted: function() {
+    created() {
+      dayjs.extend(window.dayjs_plugin_customParseFormat);
+
+      this.user.date = dayjs(new Date()).format('HH:mm');
+      this.contactMessage.date = dayjs(new Date()).format('HH:mm');
+
+      dayjs('10/01/2020 15:30:55', 'DD/MM/YYYY HH:mm:ss');
+      dayjs('10/01/2020 15:30:55', 'DD/MM/YYYY HH:mm:ss').format('HH:mm');
+
+      for (var i = 0; i < this.contacts.length; i++) {
+        this.time.push(dayjs(this.contacts[i].messages[this.contacts[i].messages.length - 1].date, 'DD/MM/YYYY HH:mm:ss').format('HH:mm'));
+      }
+      console.log(this.time);
+    },
+    mounted() {
       this.autoScroll();
 
-      
     },
+
 
 
   }
